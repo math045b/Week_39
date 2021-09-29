@@ -47,7 +47,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 4
+  m_LinearDrag: 6
   m_AngularDrag: 20
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  speed: 300
+  speed: 8
   killScore: 1
 --- !u!1 &5202074404297219174
 GameObject:

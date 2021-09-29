@@ -9,11 +9,19 @@ public class GameManager : MonoBehaviour
     int playerHealth = 3;
     int score = 0;
     TextMeshProUGUI scoreText;
+    TextMeshProUGUI healthText;
+    GameObject player;
+    GameObject gameOver;
 
     private void Start()
     {
         playerHealth = playerMaxHealth;
         scoreText = GameObject.Find("Score").GetComponent<TextMeshProUGUI>();
+        healthText = GameObject.Find("HealthText").GetComponent<TextMeshProUGUI>();
+        healthText.SetText("Health: " + playerHealth);
+        player = GameObject.Find("Player");
+        gameOver = GameObject.Find("GameOverGroup");
+        gameOver.SetActive(false);
     }
 
     public void addScore(int amount)
@@ -25,9 +33,11 @@ public class GameManager : MonoBehaviour
     public void damagePlayer(int amount)
     {
         playerHealth -= amount;
+        healthText.SetText("Health: "+playerHealth);
         if (playerHealth < 1)
         {
-            //Game over
+            Destroy(player);
+            gameOver.SetActive(true);
         }
     }
 }
